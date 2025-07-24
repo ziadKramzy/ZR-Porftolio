@@ -16,7 +16,9 @@ function App() {
       <HeroParallaxDemo />
       </div>
       <div id="projects-section" className="min-h-screen py-12 px-4 sm:px-6 lg:px-8 gap-4">
-        <h2 className="text-3xl font-bold text-center text-white mb-12">My Projects</h2>
+        <h2 className="text-4xl md:text-5xl font-extrabold text-center animate-fade-in-down bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-500 bg-clip-text text-transparent drop-shadow-lg mb-12">
+          Get a look at my Projects
+        </h2>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
