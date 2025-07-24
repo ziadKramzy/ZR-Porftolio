@@ -21,34 +21,45 @@ export function ThreeDCardDemo({
   gitHubLink = "https://github.com/",
 }: ThreeDCardDemoProps) {
   return (
-    <CardContainer className="inter-var">
-      <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full  md:w-lg lg:w-lg  xl:w-2xl  max-w-2xl h-auto rounded-xl p-10 border">
-        <CardItem
-          translateZ="50"
-          className="text-2xl font-bold text-neutral-600 dark:text-white flex items-center gap-4"
-        >
-          {title}
+    <CardContainer className="w-full h-full">
+      <CardBody className="bg-gray-50 relative group/card hover:shadow-2xl hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full h-full rounded-xl p-4 sm:p-6 md:p-8 border flex flex-col max-w-4xl xl:max-w-5xl 2xl:max-w-6xl mx-auto">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <CardItem
+            translateZ="50"
+            className="text-xl sm:text-2xl font-bold text-neutral-600 dark:text-white"
+          >
+            {title}
+          </CardItem>
           {floatImgSrc && (
-            <img src={floatImgSrc} alt="float" className="inline-block w-40 h-30 rounded-2xl p-1 ml-[12vw]" />
+            <CardItem
+              translateZ="50"
+              className="w-16 h-16 sm:w-24 sm:h-24 md:w-32 md:h-24 rounded-xl overflow-hidden"
+            >
+              <img 
+                src={floatImgSrc} 
+                alt={title} 
+                className="w-full h-full object-contain"
+              />
+            </CardItem>
           )}
-        </CardItem>
+        </div>
         <CardItem
           as="p"
           translateZ="60"
-          className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300"
+          className="text-neutral-500 text-sm sm:text-base mt-2 dark:text-neutral-300 flex-grow"
         >
           {description}
         </CardItem>
-        <CardItem translateZ="100" className="w-full mt-4">
-          <img
-            src={mainImgSrc}
-            height="1000"
-            width="1000"
-            className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
-            alt="thumbnail"
-          />
+        <CardItem translateZ="100" className="w-full mt-4 flex-grow flex items-center">
+          <div className="relative w-full h-48 sm:h-56 md:h-64 lg:h-72 xl:h-80 rounded-xl overflow-hidden">
+            <img
+              src={mainImgSrc}
+              alt={`${title} screenshot`}
+              className="w-full h-full object-cover transition-transform duration-300 group-hover/card:scale-105"
+            />
+          </div>
         </CardItem>
-        <div className="flex justify-between items-center mt-20">
+        <div className="flex justify-between items-center mt-6 sm:mt-8">
           <CardItem
             translateZ={20}
             as="a"

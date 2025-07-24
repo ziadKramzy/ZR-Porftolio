@@ -15,16 +15,15 @@ function App() {
 
       <HeroParallaxDemo />
       </div>
-      <motion.div
-        id="projects-section"
-        initial={{ opacity: 0, y: 60 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 2, ease: 'easeInOut' }}
-        viewport={{ once: true, amount: 0.3 }}
-        className="grid grid-cols-1  md:grid-cols-1 
-      lg:grid-cols-2 xl:grid-cols-2 gap-1 sm:gap-2 md:gap-4 lg:gap-4 
-      xl:gap-6 2xl:gap-8 mx-[5vw]"
-      >
+      <div id="projects-section" className="min-h-screen py-12 px-4 sm:px-6 lg:px-8 gap-4">
+        <h2 className="text-3xl font-bold text-center text-white mb-12">My Projects</h2>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+          viewport={{ once: false, amount: 0.1 }}
+          className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-8 xl:gap-12 2xl:gap-16 max-w-6xl 2xl:max-w-7xl mx-auto"
+        >
         <ThreeDCardDemo 
           title="CrowdFunding Platform" 
           description="A full-stack crowdfunding platform built with React, JSX, and Django REST Framework. Features include user authentication, project creation, real-time updates, and responsive design." 
@@ -61,7 +60,8 @@ function App() {
           linkText="PLAY GAME →" 
           gitHubLink='https://github.com/ziadKramzy/Memory-Matching-Game'
         />
-      </motion.div>
+        </motion.div>
+      </div>
 
       
 
