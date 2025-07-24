@@ -48,7 +48,6 @@ export const products: MyHeroProduct[] = [
   },
   {
     title: "Python",
-    link: "https://userogue.com",
     thumbnail:
       "https://i.postimg.cc/ydxKZZnL/Screenshot-from-2025-07-24-15-56-29.png",
     svg: (
@@ -64,7 +63,6 @@ export const products: MyHeroProduct[] = [
 
   {
     title: "Windsurf",
-    link: "https://editorially.org",
     thumbnail:
       "https://i.postimg.cc/QdzwyyqJ/Screenshot-from-2025-07-24-16-01-50.png",
     svg: (
