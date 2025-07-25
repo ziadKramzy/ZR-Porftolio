@@ -51,14 +51,15 @@ function Navbar({ className }: { className?: string }) {
             setActive={setActive}
             active={active}
             item={
-              <a
-                href="/Ziad-Ramzy-CV.pdf"
-                download="Ziad-Ramzy-CV.pdf"
-                className="px-2 sm:px-3 md:px-4 py-1 text-sm sm:text-base text-white font-medium sm:font-semibold shadow transition hover:text-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50 whitespace-nowrap"
-                style={{ display: 'inline-block' }}
-              >
-                Resume
-              </a>
+              <span
+              className="cursor-pointer px-2 sm:px-3 py-1 text-sm sm:text-base text-white font-medium sm:font-semibold hover:text-blue-400 transition-colors whitespace-nowrap"
+              onClick={() => {
+                const section = document.getElementById('about');
+                section?.scrollIntoView({ behavior: 'smooth' });
+              }}
+            >
+              About Me
+            </span>
             }
           />
           <MenuItem

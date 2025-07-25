@@ -86,17 +86,7 @@ export default function ContactForm() {
               {state.submitting ? "Sending..." : "Submit"}
             </button>
           </form>
-          {/* Image Side */}
-          <div className="hidden sm:flex w-full md:flex-1 h-full items-center justify-center mt-8 sm:mt-10 md:mt-0">
-            <div className="relative w-full max-w-[280px] sm:max-w-[350px] md:max-w-[400px] lg:max-w-[500px]">
-              <img
-                src={profileImg}
-                alt="Contact Illustration"
-                className="w-full h-auto max-h-[250px] sm:max-h-[350px] md:max-h-[450px] object-cover rounded-3xl shadow-2xl border border-border transform transition-transform duration-300 hover:scale-102"
-              />
-              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-transparent via-transparent to-black/10 dark:to-white/5 -z-10"></div>
-            </div>
-          </div>
+      
       </div>
       </ContainerScroll>
     </div>

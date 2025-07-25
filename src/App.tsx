@@ -1,7 +1,9 @@
 import { ThreeDCardDemo } from './components/Card/ThreeDCardDemo';
 import ContactForm from './components/contact/Contactform';
+import Footer from './components/Footer/Footer';
 import { HeroParallaxDemo } from './components/myhero';
 import Navbar from './components/Navbar/Navbar';
+import AboutMe from './components/aboutMe/AboutMe';
 import { motion } from 'framer-motion';
 
 
@@ -14,6 +16,7 @@ function App() {
       <div className='bg-gray-950'>
         <HeroParallaxDemo />
       </div>
+      <AboutMe />
       <div id="projects-section" className="py-12 px-4 sm:px-6 lg:px-8 gap-4 bg-gray-950">
         <h2 className="text-4xl md:text-5xl font-extrabold text-center animate-fade-in-down bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-500 bg-clip-text text-transparent drop-shadow-lg mb-12">
           Take a look at my Projects
@@ -67,7 +70,9 @@ function App() {
       <div id="contact-section" className='bg-gray-950'>
       <ContactForm/>
 </div>
-      
+      <div>
+        <Footer/>
+      </div>
     </>
   );
 }
