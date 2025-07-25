@@ -36,6 +36,7 @@ export const HeroParallax = ({
   return (
     <div
       ref={ref}
+     id="home"
       className="min-h-screen py-20 overflow-hidden antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
     >
       <Header />

@@ -36,7 +36,15 @@ function Navbar({ className }: { className?: string }) {
             setActive={setActive}
             active={active}
             item={
-              <a href="#" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="flex items-center group">
+<a 
+                href="#" 
+                onClick={(e) => {
+                  e.preventDefault();
+                  const sectionHome = document.getElementById('home');
+                  sectionHome?.scrollIntoView({ behavior: 'smooth' });
+                }} 
+                className="flex items-center group"
+              >
                 <img 
                   src={zrLogo} 
                   alt="Logo" 
@@ -53,7 +61,8 @@ function Navbar({ className }: { className?: string }) {
             item={
               <span
               className="cursor-pointer px-2 sm:px-3 py-1 text-sm sm:text-base text-white font-medium sm:font-semibold hover:text-blue-400 transition-colors whitespace-nowrap"
-              onClick={() => {
+              onClick={(e) => {
+                e.preventDefault();
                 const section = document.getElementById('about');
                 section?.scrollIntoView({ behavior: 'smooth' });
               }}
