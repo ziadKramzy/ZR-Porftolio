@@ -2,7 +2,6 @@
 import { ContainerScroll } from "../ui/container-scroll-animation";
 import { useForm, ValidationError } from '@formspree/react';
 import React from "react";
-import profileImg from '../../assets/profile.jpeg'
 export default function ContactForm() {
   const [state, handleSubmit] = useForm("meozawbb");
   const [showSuccess, setShowSuccess] = React.useState(false);
