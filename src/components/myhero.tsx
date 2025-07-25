@@ -164,7 +164,7 @@ export const products: MyHeroProduct[] = [
   {
     title: "Aceturnity ui",
     thumbnail:
-      "https://i.postimg.cc/tgcjjgtw/Screenshot-from-2025-07-24-16-25-39.png",
+      "https://i.postimg.cc/W47qXbtJ/Screenshot-from-2025-07-25-06-21-52.png",
   },
 
   {
