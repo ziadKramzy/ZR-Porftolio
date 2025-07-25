@@ -1,5 +1,7 @@
 "use client";
 import { useState } from "react";
+import { motion } from "framer-motion";
+import type { Variants } from "framer-motion";
 import { MenuItem } from "../ui/navbar-menu";
 import { cn } from "../../lib/utils";
 
@@ -8,8 +10,24 @@ import zrLogo from '../../assets/zr.png';
 
 function Navbar({ className }: { className?: string }) {
   const [active, setActive] = useState<string | null>(null);
+  // Animation variants for the navbar
+  const navVariants: Variants = {
+    hidden: { opacity: 0, y: -20 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut"
+      }
+    }
+  };
+
   return (
-    <div
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      variants={navVariants}
       className={cn("fixed top-4 sm:top-6 inset-x-0 max-w-5xl mx-auto z-50 flex justify-center w-full px-4", className)}
     >
       <div className="flex items-center justify-between w-full max-w-2xl rounded-full bg-white/80 dark:bg-black/80 shadow-input px-4 sm:px-6 md:px-8 py-1 sm:py-2 backdrop-blur-lg mx-auto gap-2">
@@ -75,7 +93,7 @@ function Navbar({ className }: { className?: string }) {
           />
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

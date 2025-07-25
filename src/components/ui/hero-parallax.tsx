@@ -1,12 +1,8 @@
 "use client";
 import React from "react";
-import {
-  motion,
-  useScroll,
-  useTransform,
-  useSpring,
-  MotionValue,
-} from "motion/react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import type { Variants, MotionValue } from "framer-motion";
+import { useSpring } from "framer-motion";
 
 
 
@@ -22,7 +18,7 @@ export const HeroParallax = ({
   const firstRow = products.slice(0, 5);
   const secondRow = products.slice(5, 10);
   const thirdRow = products.slice(10, 15);
-  const ref = React.useRef(null);
+  const ref = React.useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end start"],
@@ -30,34 +26,17 @@ export const HeroParallax = ({
 
   const springConfig = { stiffness: 300, damping: 30, bounce: 100 };
 
-  const translateX = useSpring(
-    useTransform(scrollYProgress, [0, 1], [0, 1000]),
-    springConfig
-  );
-  const translateXReverse = useSpring(
-    useTransform(scrollYProgress, [0, 1], [0, -1000]),
-    springConfig
-  );
-  const rotateX = useSpring(
-    useTransform(scrollYProgress, [0, 0.2], [15, 0]),
-    springConfig
-  );
-  const opacity = useSpring(
-    useTransform(scrollYProgress, [0, 0.2], [0.2, 1]),
-    springConfig
-  );
-  const rotateZ = useSpring(
-    useTransform(scrollYProgress, [0, 0.2], [20, 0]),
-    springConfig
-  );
-  const translateY = useSpring(
-    useTransform(scrollYProgress, [0, 0.2], [-700, 500]),
-    springConfig
-  );
+  const rotateX = useSpring(useTransform(scrollYProgress, [0, 0.2], [15, 0]), springConfig);
+  const opacity = useSpring(useTransform(scrollYProgress, [0, 0.2], [0.2, 1]), springConfig);
+  const rotateZ = useSpring(useTransform(scrollYProgress, [0, 0.2], [20, 0]), springConfig);
+  const translateY = useSpring(useTransform(scrollYProgress, [0, 0.2], [-1000, 0]), springConfig);
+  const translateX = useSpring(useTransform(scrollYProgress, [0, 0.2], [1000, 0]), springConfig);
+  const translateXReverse = useSpring(useTransform(scrollYProgress, [0, 0.2], [-1000, 0]), springConfig);
+
   return (
     <div
       ref={ref}
-      className="h-[300vh] py-40 overflow-hidden  antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
+      className="min-h-screen py-20 overflow-hidden antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
     >
       <Header />
       <motion.div
@@ -111,6 +90,19 @@ export const Header = () => {
   const description =
     "Passionate Full-Stack Developer and ITI graduate with real-world project experience. Skilled in both front-end and back-end, delivering robust and scalable solutions. Dedicated to continuous learning and build.";
 
+  // Animation variants for the navbar
+  const navVariants: Variants = {
+    hidden: { opacity: 0, y: -20 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut"
+      }
+    }
+  };
+
   const renderHeading = useCallback(
     (displayed: string) => {
       const [namePart, ...rest] = displayed.split("\n");
@@ -128,17 +120,39 @@ export const Header = () => {
 
   return (
     <div className="max-w-7xl relative mx-auto py-20 md:py-40 px-4 w-full left-0 top-0">
-      <h1 className="text-2xl md:text-7xl font-bold dark:text-white min-h-[4.5rem] md:min-h-[8rem]">
-        <Typewriter
-          text={`${name}\n${title}`}
-          speed={32}
-          className="whitespace-pre-line"
-          render={renderHeading}
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        variants={navVariants}
+      >
+        <h1 className="text-2xl md:text-7xl font-bold dark:text-white min-h-[4.5rem] md:min-h-[8rem]">
+          <Typewriter
+            text={`${name}\n${title}`}
+            speed={32}
+            className="whitespace-pre-line"
+            render={renderHeading}
+          />
+        </h1>
+      </motion.div>
+      <motion.p 
+        className="max-w-2xl text-base md:text-xl mt-8 dark:text-neutral-200 min-h-[5rem] md:min-h-[7rem]"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ 
+          opacity: 1, 
+          y: 0,
+          transition: {
+            delay: 1.5,
+            duration: 0.8,
+            ease: "easeOut"
+          }
+        }}
+      >
+        <Typewriter 
+          text={description} 
+          speed={10}
+          className="inline"
         />
-      </h1>
-      <p className="max-w-2xl text-base md:text-xl mt-8 dark:text-neutral-200 min-h-[5rem] md:min-h-[7rem]">
-        {description}
-      </p>
+      </motion.p>
     </div>
   );
 };

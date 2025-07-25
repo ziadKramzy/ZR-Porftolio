@@ -12,12 +12,11 @@ function App() {
       
       <Navbar />
       <div className='bg-gray-950'>
-
-      <HeroParallaxDemo />
+        <HeroParallaxDemo />
       </div>
-      <div id="projects-section" className="min-h-screen py-12 px-4 sm:px-6 lg:px-8 gap-4">
+      <div id="projects-section" className="py-12 px-4 sm:px-6 lg:px-8 gap-4 bg-gray-950">
         <h2 className="text-4xl md:text-5xl font-extrabold text-center animate-fade-in-down bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-500 bg-clip-text text-transparent drop-shadow-lg mb-12">
-          Get a look at my Projects
+          Take a look at my Projects
         </h2>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -64,10 +63,8 @@ function App() {
         />
         </motion.div>
       </div>
-
       
-
-<div id="contact-section" className='bg-gray-950'>
+      <div id="contact-section" className='bg-gray-950'>
       <ContactForm/>
 </div>
       
