@@ -120,7 +120,6 @@ export const products: MyHeroProduct[] = [
   },
   {
     title: "TailwindCss",
-    link: "https://ui.aceternity.com",
     thumbnail:
       "https://i.postimg.cc/gk81TDTC/Screenshot-from-2025-07-24-16-14-26.png",
     svg: (
