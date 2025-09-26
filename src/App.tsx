@@ -32,8 +32,8 @@ function App() {
    <ThreeDCardDemo 
           title="Education PLatform SaaS" 
           description="A full-stack education platform SaaS built with React, JSX, and Django REST Framework. Features include user authentication, course creation, real-time updates, and responsive design." 
-          floatImgSrc="https://postimg.cc/WFvdbh7Z" 
-          mainImgSrc="https://postimg.cc/YjC9dqJ9" 
+          floatImgSrc="https://i.postimg.cc/k4VKsS6T/edu-Logo.png" 
+          mainImgSrc="https://i.postimg.cc/2j4Z81G4/edu-Home.png" 
           linkHref="https://psu-platform.vercel.app/" 
           linkText="LIVE DEMO →" 
           gitHubLink='https://github.com/ITI-Team1/Edu-Track'
