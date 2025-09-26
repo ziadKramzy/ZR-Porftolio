@@ -28,6 +28,17 @@ function App() {
           viewport={{ once: false, amount: 0.1 }}
           className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-8 xl:gap-12 2xl:gap-16 max-w-6xl 2xl:max-w-7xl mx-auto"
         >
+
+   <ThreeDCardDemo 
+          title="Education PLatform SaaS" 
+          description="A full-stack education platform SaaS built with React, JSX, and Django REST Framework. Features include user authentication, course creation, real-time updates, and responsive design." 
+          floatImgSrc="https://postimg.cc/WFvdbh7Z" 
+          mainImgSrc="https://postimg.cc/YjC9dqJ9" 
+          linkHref="https://psu-platform.vercel.app/" 
+          linkText="LIVE DEMO →" 
+          gitHubLink='https://github.com/ITI-Team1/Edu-Track'
+        />
+
         <ThreeDCardDemo 
           title="CrowdFunding Platform" 
           description="A full-stack crowdfunding platform built with React, JSX, and Django REST Framework. Features include user authentication, project creation, real-time updates, and responsive design." 
