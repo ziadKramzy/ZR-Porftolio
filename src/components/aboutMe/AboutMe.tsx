@@ -42,7 +42,7 @@ const AboutMe: React.FC = () => {
   };
 
   return (
-    <section id="about" className="py-20 bg-gray-50 dark:bg-gray-950 overflow-hidden">
+    <section id="about" className="py-20 overflow-hidden">
       <div className="container mx-auto px-4">
         <motion.div
           ref={ref}

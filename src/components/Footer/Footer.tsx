@@ -1,50 +1,54 @@
 import React from 'react';
-import { FaGithub, FaLinkedin, FaFacebook } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaFacebook, FaInstagram, FaFigma } from 'react-icons/fa';
+import { SlidingLogoMarquee, type SlidingLogoMarqueeItem } from "@/components/ui/SlidingLogoMarquee";
 
 const Footer: React.FC = () => {
-  const currentYear = new Date().getFullYear();
+  const logos: SlidingLogoMarqueeItem[] = [
+    {
+      id: "linkedin",
+      content: <FaLinkedin className="text-white" />,
+      href: "https://linkedin.com/in/ziad-ramzy",
+    },
+    {
+      id: "github",
+      content: <FaGithub className="text-white" />,
+      href: "https://github.com/ziadKramzy",
+    },
+    {
+      id: "facebook",
+      content: <FaFacebook className="text-white" />,
+      href: "https://www.facebook.com/ziyad.khaled.9/",
+    },
+    {
+      id: "instagram",
+      content: <FaInstagram className="text-white" />,
+      href: "https://www.instagram.com/ziad.k_ramzy?igsh=MW1hbzkweWJ1cGR2dA%3D%3D&utm_source=qr",
+    },
+    {
+      id:"Figma",
+      content:<FaFigma className="text-white" />,
+      href:"https://www.figma.com/@ziadramzy",
+    },
+  
+
+  ];
 
   return (
-    <footer className="bg-gray-900 text-white py-8">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="mb-4 md:mb-0">
-            <p className="text-sm md:text-base">
-              © {currentYear} Mady By Ziad Ramzy...
-            </p>
-          </div>
-          
-          <div className="flex space-x-6">
-            <a 
-              href="https://github.com/ziadKramzy" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-gray-400 hover:text-white transition-colors duration-300"
-              aria-label="GitHub"
-            >
-              <FaGithub className="w-6 h-6" />
-            </a>
-            
-            <a 
-              href="https://www.linkedin.com/in/ziad-khaled-ramzy/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-gray-400 hover:text-blue-500 transition-colors duration-300"
-              aria-label="LinkedIn"
-            >
-              <FaLinkedin className="w-6 h-6" />
-            </a>
-            
-            <a 
-              href="https://www.facebook.com/share/19WjYRiBtu/?mibextid=wwXIfr" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-gray-400 hover:text-blue-600 transition-colors duration-300"
-              aria-label="Facebook"
-            >
-              <FaFacebook className="w-6 h-6" />
-            </a>
-          </div>
+    <footer className="w-full  border-t border-gray-800">
+      <div className="mx-auto px-4 py-8">
+        <SlidingLogoMarquee
+          items={logos}
+          speed={20}
+          height="120px"
+          enableBlur={true}
+          blurIntensity={2}
+          pauseOnHover={true}
+          showGridBackground={true}
+          showControls={false}
+          onItemClick={(item) => console.log("Clicked:", item.id)}
+        />
+        <div className="mt-6 text-center text-sm text-gray-400">
+          © {new Date().getFullYear()} Ziad Ramzy. All rights reserved.
         </div>
       </div>
     </footer>
