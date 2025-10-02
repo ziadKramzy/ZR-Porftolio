@@ -7,7 +7,7 @@ const Footer: React.FC = () => {
     {
       id: "linkedin",
       content: <FaLinkedin className="text-white" />,
-      href: "https://linkedin.com/in/ziad-ramzy",
+      href: "https://www.linkedin.com/in/ziad-khaled-ramzy/",
     },
     {
       id: "github",
