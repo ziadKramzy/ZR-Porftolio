@@ -17,8 +17,8 @@ function App() {
   useEffect(() => {
     // Preload key images used in the landing page for smoother first paint
     const urls: string[] = [
-      'https://i.postimg.cc/k4VKsS6T/edu-Logo.png',
-      'https://i.postimg.cc/nch3RLtP/Screenshot-from-2025-10-01-20-24-04.png',
+      'https://i.postimg.cc/W3YTCBg9/logo.png',
+      'https://i.postimg.cc/Kc757m7R/Screenshot-from-2025-10-06-01-41-02.png',
       'https://i.postimg.cc/m2Bc5bZB/Crowdfunding-Concept-Icon.png',
       'https://i.postimg.cc/qMFTCL5S/Screenshot-from-2025-07-24-17-27-25.png',
       'https://i.postimg.cc/HncCS8JB/E-Commerce-Simplified-Icon.png',
@@ -79,10 +79,10 @@ function App() {
             >
 
         <ThreeDCardDemo 
-                title="Education PLatform SaaS" 
-                description="A full-stack education platform SaaS built with React, JSX, and Django REST Framework. Features include user authentication, course creation, real-time updates, and responsive design." 
-                floatImgSrc="https://i.postimg.cc/k4VKsS6T/edu-Logo.png" 
-                mainImgSrc="https://i.postimg.cc/nch3RLtP/Screenshot-from-2025-10-01-20-24-04.png" 
+                title="Education PLatform For PSU" 
+                description="A full-stack education platform (SaaS) built with React, JSX, and Django REST Framework. Features include user authentication, course creation, real-time updates, and responsive design." 
+                floatImgSrc="https://i.postimg.cc/W3YTCBg9/logo.png" 
+                mainImgSrc="https://i.postimg.cc/Kc757m7R/Screenshot-from-2025-10-06-01-41-02.png" 
                 linkHref="https://psu-platform.vercel.app/" 
                 linkText="LIVE DEMO →" 
                 gitHubLink='https://github.com/ITI-Team1/Edu-Track'
