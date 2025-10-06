@@ -13,6 +13,7 @@ import Loader from './components/ui/Loader';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
+  const [progress, setProgress] = useState(0);
 
   useEffect(() => {
     // Preload key images used in the landing page for smoother first paint
@@ -28,36 +29,49 @@ function App() {
       'https://i.postimg.cc/pXGys40d/marvel-Cards.jpg',
       'https://i.postimg.cc/cH0sxBDj/Screenshot-from-2025-07-24-18-01-48.png',
     ];
+    const total = urls.length;
+    let loaded = 0;
 
+    type PrioritizedImage = HTMLImageElement & { fetchPriority?: 'high' | 'low' | 'auto' };
     const preload = (src: string) =>
       new Promise<void>((resolve) => {
-        const img = new Image();
-        img.onload = () => resolve();
-        img.onerror = () => resolve();
+        const img = new Image() as PrioritizedImage;
+        const done = () => {
+          loaded += 1;
+          setProgress(Math.round((loaded / total) * 100));
+          resolve();
+        };
+        img.onload = done;
+        img.onerror = done;
+        img.decoding = 'async';
+        // give priority hints where supported
+        img.fetchPriority = 'high';
         img.src = src;
       });
 
     Promise.all(urls.map(preload)).then(() => {
       // small delay to let fonts/particles settle
-      setTimeout(() => setIsLoading(false), 300);
+      setTimeout(() => setIsLoading(false), 200);
     });
   }, []);
 
   return (
     <div className="min-h-screen flex flex-col relative">
-      {/* Global background layer */}
-      <div style={{ width: '100%', height: '100%', position: 'absolute' }}>
-        <Particles
-          particleColors={['#ffffff', '#ffffff']}
-          particleCount={8000}
-          particleSpread={10}
-          speed={0.1}
-          particleBaseSize={100}
-          moveParticlesOnHover={true}
-          alphaParticles={false}
-          disableRotation={false}
-        />
-      </div>
+      {/* Global background layer - render after load to avoid initial jank */}
+      {!isLoading && (
+        <div style={{ width: '100%', height: '100%', position: 'absolute' }}>
+          <Particles
+            particleColors={['#ffffff', '#ffffff']}
+            particleCount={8000}
+            particleSpread={10}
+            speed={0.1}
+            particleBaseSize={100}
+            moveParticlesOnHover={true}
+            alphaParticles={false}
+            disableRotation={false}
+          />
+        </div>
+      )}
 
       {/* Foreground content */}
       <main className="relative z-10 flex-1">
@@ -135,7 +149,7 @@ function App() {
       {/* Page footer at bottom */}
       <Footer/>
 
-      {isLoading && <Loader />}
+      {isLoading && <Loader progress={progress} />}
     </div>
   );
 }
