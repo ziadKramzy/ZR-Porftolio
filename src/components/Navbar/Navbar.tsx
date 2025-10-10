@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import type { Variants } from "framer-motion";
 import { MenuItem } from "../ui/navbar-menu";
 import { cn } from "../../lib/utils";
-import zrLogo from "../../assets/zr.png";
+import zrLogo from "../../assets/zr.webp";
 
 function Navbar({ className }: { className?: string }) {
   const [active, setActive] = useState<string | null>(null);
