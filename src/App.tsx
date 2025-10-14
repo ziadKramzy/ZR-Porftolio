@@ -101,6 +101,26 @@ function App() {
                 linkText="LIVE DEMO →" 
                 gitHubLink='https://github.com/ITI-Team1/Edu-Track'
               />
+    <ThreeDCardDemo 
+                title="MTIS College Website"
+                description="A comprehensive college website developed for MTIS College, featuring program information, faculty details, news updates, and student portal." 
+                floatImgSrc="https://i.postimg.cc/J08RhcPv/logoMTIS.png" 
+                mainImgSrc="https://i.postimg.cc/XYyTBBmg/Screenshot-from-2025-07-24-17-42-15.png" 
+                linkHref="https://mtisproject.onrender.com/home-en" 
+                linkText="VISIT SITE →" 
+                gitHubLink='https://github.com/ziadKramzy/MTISProject'
+              />
+
+              <ThreeDCardDemo 
+                title="E-Commerce Platform" 
+                description="A modern e-commerce solution built with React, featuring user authentication, product Built with React Hooks, Context API for state management" 
+                floatImgSrc="https://i.postimg.cc/HncCS8JB/E-Commerce-Simplified-Icon.png" 
+                mainImgSrc="https://i.postimg.cc/9Mqhbqw1/Screenshot-from-2025-07-24-17-35-16.png" 
+                linkHref="https://quiet-crumble-137356.netlify.app/" 
+                linkText="LIVE DEMO →" 
+                gitHubLink='https://github.com/ziadKramzy/e-commerce'
+              />
+
 
               <ThreeDCardDemo 
                 title="CrowdFunding Platform" 
@@ -111,24 +131,7 @@ function App() {
                 linkText="LIVE DEMO →" 
                 gitHubLink='https://github.com/ziadKramzy/crowdfunding_frontend-'
               />
-              <ThreeDCardDemo 
-                title="E-Commerce Platform" 
-                description="A modern e-commerce solution built with React, featuring user authentication, product Built with React Hooks, Context API for state management" 
-                floatImgSrc="https://i.postimg.cc/HncCS8JB/E-Commerce-Simplified-Icon.png" 
-                mainImgSrc="https://i.postimg.cc/9Mqhbqw1/Screenshot-from-2025-07-24-17-35-16.png" 
-                linkHref="https://quiet-crumble-137356.netlify.app/" 
-                linkText="LIVE DEMO →" 
-                gitHubLink='https://github.com/ziadKramzy/e-commerce'
-              />
-              <ThreeDCardDemo 
-                title="MTIS College Website" 
-                description="A comprehensive college website developed for MTIS College, featuring program information, faculty details, news updates, and student portal." 
-                floatImgSrc="https://i.postimg.cc/J08RhcPv/logoMTIS.png" 
-                mainImgSrc="https://i.postimg.cc/XYyTBBmg/Screenshot-from-2025-07-24-17-42-15.png" 
-                linkHref="https://mtisproject.onrender.com/home-en" 
-                linkText="VISIT SITE →" 
-                gitHubLink='https://github.com/ziadKramzy/MTISProject'
-              />
+           
               <ThreeDCardDemo 
                 title="Marvel Memory Match" 
                 description='A fun and engaging memory matching game featuring Marvel superheroes, built with vanilla JavaScript and DOM manipulation.' 
