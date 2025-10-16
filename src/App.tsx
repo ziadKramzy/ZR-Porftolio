@@ -55,23 +55,29 @@ function App() {
     });
   }, []);
 
+  // While loading, render only the loader to prevent background components
+  // (particles, parallax, animations) from mounting and running in the
+  // background. This ensures the loader exclusively manages the initial
+  // loading experience.
+  if (isLoading) {
+    return <Loader progress={progress} />;
+  }
+
   return (
     <div className="min-h-screen flex flex-col relative">
       {/* Global background layer - render after load to avoid initial jank */}
-      {!isLoading && (
-        <div style={{ width: '100%', height: '100%', position: 'absolute' }}>
-          <Particles
-            particleColors={['#ffffff', '#ffffff']}
-            particleCount={8000}
-            particleSpread={10}
-            speed={0.1}
-            particleBaseSize={100}
-            moveParticlesOnHover={true}
-            alphaParticles={false}
-            disableRotation={false}
-          />
-        </div>
-      )}
+      <div style={{ width: '100%', height: '100%', position: 'absolute' }}>
+        <Particles
+          particleColors={['#ffffff', '#ffffff']}
+          particleCount={8000}
+          particleSpread={10}
+          speed={0.1}
+          particleBaseSize={100}
+          moveParticlesOnHover={true}
+          alphaParticles={false}
+          disableRotation={false}
+        />
+      </div>
 
       {/* Foreground content */}
       <main className="relative z-10 flex-1">

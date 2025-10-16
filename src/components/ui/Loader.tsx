@@ -7,7 +7,7 @@ type LoaderProps = {
 export default function Loader({ progress = 0 }: LoaderProps) {
   const pct = Math.max(0, Math.min(100, progress));
   return (
-    <div className="fixed inset-0 z-[1000] grid place-items-center bg-black/70 backdrop-blur-md">
+    <div className="fixed inset-0 z-[1000] grid place-items-center bg-black">
       {/* Outer glow and particles-like aura */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute -top-24 left-1/2 -translate-x-1/2 h-64 w-64 rounded-full blur-3xl opacity-30 bg-gradient-to-r from-blue-500 via-cyan-400 to-indigo-500" />

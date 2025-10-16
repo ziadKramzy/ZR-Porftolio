@@ -89,7 +89,7 @@ export const Header = () => {
   const name = "Ziad Ramzy";
   const title = "Full-Stack Developer";
   const description =
-    "Passionate Full-Stack Developer and ITI graduate with real-world project experience. Skilled in both front-end and back-end, delivering robust and scalable solutions. Dedicated to continuous learning and build.";
+    "Passionate Full-Stack Developer with Frontend Focus and ITI graduate with real-world project experience. Skilled in both front-end and back-end, delivering robust and scalable solutions. Dedicated to continuous learning and build.";
 
   // Animation variants for the navbar
   const navVariants: Variants = {
