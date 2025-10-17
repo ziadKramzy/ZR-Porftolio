@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import { FiDownload } from "react-icons/fi";
 import { motion } from "framer-motion";
+import resumePdf from "../../assets/Ziad-Ramzy-Full-Stack.pdf";
 
 const TARGET_TEXT = "Download Resume";
 const CYCLES_PER_LETTER = 2;
@@ -14,8 +15,8 @@ const DownloadButton = () => {
   const handleDownload = () => {
     // Trigger file download
     const link = document.createElement('a');
-    link.href = '/Ziad-Ramzy-CV.pdf';
-    link.download = 'Ziad-Ramzy-CV.pdf';
+    link.href = resumePdf;
+    link.download = 'Ziad-Ramzy-Full-Stack.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
