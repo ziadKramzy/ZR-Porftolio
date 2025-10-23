@@ -107,6 +107,17 @@ function App() {
                 linkText="LIVE DEMO →" 
                 gitHubLink='https://github.com/ITI-Team1/Edu-Track'
               />
+
+     <ThreeDCardDemo 
+     title='Power Axes Company Website'
+     description='a Next.Js Frontend project that focuses on optmizing the SEO and make the copmany apear more and reach to thier needed users'
+      floatImgSrc='https://i.postimg.cc/vZv8qTJR/main-logo.png'
+      mainImgSrc='https://i.postimg.cc/525W4rg8/Screenshot-from-2025-10-23-15-51-24.png'
+      linkHref='https://poweraxes.vercel.app/'
+      gitHubLink='https://github.com/Galal-Elsayed/power-axes/tree/main'
+
+     />
+
     <ThreeDCardDemo 
                 title="MTIS College Website"
                 description="A comprehensive college website developed for MTIS College, featuring program information, faculty details, news updates, and student portal." 
