@@ -121,6 +121,8 @@ const Particles: React.FC<ParticlesProps> = ({
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const mouseRef = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
+  const resizeTimeoutRef = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
+  const mouseMoveThrottleRef = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -134,21 +136,33 @@ const Particles: React.FC<ParticlesProps> = ({
     const camera = new Camera(gl, { fov: 15 });
     camera.position.set(0, 0, cameraDistance);
 
+    // Throttled resize handler
     const resize = () => {
       const width = container.clientWidth;
       const height = container.clientHeight;
       renderer.setSize(width, height);
       camera.perspective({ aspect: gl.canvas.width / gl.canvas.height });
     };
-    window.addEventListener('resize', resize, false);
+    
+    const handleResize = () => {
+      if (resizeTimeoutRef.current) clearTimeout(resizeTimeoutRef.current);
+      resizeTimeoutRef.current = setTimeout(resize, 150);
+    };
+    
+    window.addEventListener('resize', handleResize, false);
     resize();
 
-    // Track mouse on window so UI stays interactive when used as bg
+    // Throttled mouse move handler
     const handleMouseMove = (e: MouseEvent) => {
-      const rect = container.getBoundingClientRect();
-      const x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
-      const y = -(((e.clientY - rect.top) / rect.height) * 2 - 1);
-      mouseRef.current = { x, y };
+      if (mouseMoveThrottleRef.current) return;
+      
+      mouseMoveThrottleRef.current = setTimeout(() => {
+        const rect = container.getBoundingClientRect();
+        const x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
+        const y = -(((e.clientY - rect.top) / rect.height) * 2 - 1);
+        mouseRef.current = { x, y };
+        mouseMoveThrottleRef.current = undefined;
+      }, 16); // ~60fps throttle
     };
 
     if (moveParticlesOnHover) {
@@ -230,10 +244,12 @@ const Particles: React.FC<ParticlesProps> = ({
     animationFrameId = requestAnimationFrame(update);
 
     return () => {
-      window.removeEventListener('resize', resize);
+      window.removeEventListener('resize', handleResize);
       if (moveParticlesOnHover) {
         window.removeEventListener('mousemove', handleMouseMove);
       }
+      if (resizeTimeoutRef.current) clearTimeout(resizeTimeoutRef.current);
+      if (mouseMoveThrottleRef.current) clearTimeout(mouseMoveThrottleRef.current);
       cancelAnimationFrame(animationFrameId);
       if (container.contains(gl.canvas)) {
         container.removeChild(gl.canvas);

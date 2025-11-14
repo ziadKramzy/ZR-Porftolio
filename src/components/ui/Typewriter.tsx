@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo, useCallback } from "react";
 
 interface TypewriterProps {
   text: string;
@@ -7,9 +7,10 @@ interface TypewriterProps {
   className?: string;
   render?: (displayed: string) => React.ReactNode;
   onDone?: () => void;
+  highlightTerms?: string[]; // Terms to highlight in bold blue
 }
 
-const Typewriter: React.FC<TypewriterProps> = ({ text, speed = 35, className, render, onDone }) => {
+const Typewriter: React.FC<TypewriterProps> = ({ text, speed = 35, className, render, onDone, highlightTerms = [] }) => {
   const [displayed, setDisplayed] = useState("");
 
   useEffect(() => {
@@ -27,10 +28,37 @@ const Typewriter: React.FC<TypewriterProps> = ({ text, speed = 35, className, re
     return () => clearInterval(interval);
   }, [text, speed, onDone]);
 
+  // Memoize the highlight function
+  const highlightText = useCallback((content: string) => {
+    if (highlightTerms.length === 0) return content;
+    
+    let result = content;
+    highlightTerms.forEach(term => {
+      const regex = new RegExp(`\\b${term}\\b`, 'gi');
+      result = result.replace(regex, `<span class="font-bold text-blue-400">$&</span>`);
+    });
+    return result;
+  }, [highlightTerms]);
+
+  // Memoize the highlighted content
+  const highlightedContent = useMemo(() => {
+    return highlightText(displayed);
+  }, [displayed, highlightText]);
+
   if (render) {
     return <span className={className}>{render(displayed)}</span>;
   }
+
+  if (highlightTerms.length > 0) {
+    return (
+      <span 
+        className={className}
+        dangerouslySetInnerHTML={{ __html: highlightedContent }}
+      />
+    );
+  }
+
   return <span className={className}>{displayed}</span>;
 };
 
-export default Typewriter;
+export default React.memo(Typewriter);

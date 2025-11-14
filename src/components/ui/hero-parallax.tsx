@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useMemo } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import type { Variants, MotionValue } from "framer-motion";
 import { useSpring } from "framer-motion";
@@ -15,9 +15,11 @@ export const HeroParallax = ({
     thumbnail: string;
   }[];
 }) => {
-  const firstRow = products.slice(0, 5);
-  const secondRow = products.slice(5, 10);
-  const thirdRow = products.slice(10, 15);
+  const { firstRow, secondRow, thirdRow } = useMemo(() => ({
+    firstRow: products.slice(0, 5),
+    secondRow: products.slice(5, 10),
+    thirdRow: products.slice(10, 15),
+  }), [products]);
   const ref = React.useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -89,7 +91,7 @@ export const Header = () => {
   const name = "Ziad Ramzy";
   const title = "Full-Stack Developer";
   const description =
-    "Passionate Full-Stack Developer with Frontend Focus and ITI graduate with real-world project experience. Skilled in both front-end and back-end, delivering robust and scalable solutions. Dedicated to continuous learning and build.";
+    "Passionate Full-Stack Developer with Frontend Focus and ITI graduate with real-world project experience. Skilled in both front-end and back-end, delivering robust and scalable solutions. Experienced with Next.js and Django. Dedicated to continuous learning and build.";
 
   // Animation variants for the navbar
   const navVariants: Variants = {
@@ -152,13 +154,14 @@ export const Header = () => {
           text={description} 
           speed={10}
           className="inline"
+          highlightTerms={["Next.js", "Django"]}
         />
       </motion.p>
     </div>
   );
 };
 
-export const ProductCard = ({
+const ProductCardComponent = ({
   product,
   translate,
 }: {
@@ -191,6 +194,7 @@ export const ProductCard = ({
           width="600"
           className="object-cover object-left-top absolute h-full w-full inset-0"
           alt={product.title}
+          loading="lazy"
         />
       </a>
       <div className="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-80 bg-black pointer-events-none"></div>
@@ -203,3 +207,5 @@ export const ProductCard = ({
     </motion.div>
   );
 };
+
+export const ProductCard = React.memo(ProductCardComponent);

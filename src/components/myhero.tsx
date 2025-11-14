@@ -28,6 +28,7 @@ export const products: MyHeroProduct[] = [
         alt="Docker Icon"
         width={32}
         height={32}
+        loading="lazy"
         style={{ display: 'inline-block' }}
       />
     ),
@@ -42,6 +43,7 @@ export const products: MyHeroProduct[] = [
         alt="Cursor Icon"
         width={32}
         height={32}
+        loading="lazy"
         style={{ display: 'inline-block' }}
       />
     ),
@@ -56,6 +58,7 @@ export const products: MyHeroProduct[] = [
         alt="Python Icon"
         width={32}
         height={32}
+        loading="lazy"
         style={{ display: 'inline-block' }}
       />
     ),
@@ -71,6 +74,7 @@ export const products: MyHeroProduct[] = [
         alt="Windsurf Icon"
         width={32}
         height={32}
+        loading="lazy"
         style={{ display: 'inline-block' }}
       />
     ),
@@ -85,6 +89,7 @@ export const products: MyHeroProduct[] = [
         alt="Framer Icon"
         width={32}
         height={32}
+        loading="lazy"
         style={{ display: 'inline-block' }}
       />
     ),
@@ -99,6 +104,7 @@ export const products: MyHeroProduct[] = [
         alt="Django Icon"
         width={32}
         height={32}
+        loading="lazy"
         style={{ display: 'inline-block' }}
       />
     ),
@@ -114,6 +120,7 @@ export const products: MyHeroProduct[] = [
         alt="Vite Icon"
         width={32}
         height={32}
+        loading="lazy"
         style={{ display: 'inline-block' }}
       />
     ),
@@ -128,6 +135,7 @@ export const products: MyHeroProduct[] = [
         alt="TailwindCss Icon"
         width={32}
         height={32}
+        loading="lazy"
         style={{ display: 'inline-block' }}
       />
     ),
@@ -142,6 +150,7 @@ export const products: MyHeroProduct[] = [
         alt="React Icon"
         width={32}
         height={32}
+        loading="lazy"
         style={{ display: 'inline-block' }}
       />
     ),
@@ -156,6 +165,7 @@ export const products: MyHeroProduct[] = [
         alt="Bootstrap Icon"
         width={32}
         height={32}
+        loading="lazy"
         style={{ display: 'inline-block' }}
       />
     ),
@@ -176,6 +186,7 @@ export const products: MyHeroProduct[] = [
         alt="TypeScript Icon"
         width={32}
         height={32}
+        loading="lazy"
         style={{ display: 'inline-block' }}
       />
     ),
@@ -190,6 +201,7 @@ export const products: MyHeroProduct[] = [
         alt="GitHub Git Icon"
         width={32}
         height={32}
+        loading="lazy"
         style={{ display: 'inline-block' }}
       />
     ),
@@ -204,6 +216,7 @@ export const products: MyHeroProduct[] = [
         alt="Odoo Icon"
         width={32}
         height={32}
+        loading="lazy"
         style={{ display: 'inline-block' }}
       />
     ),
@@ -218,6 +231,7 @@ export const products: MyHeroProduct[] = [
         alt="Figma Icon"
         width={32}
         height={32}
+        loading="lazy"
         style={{ display: 'inline-block' }}
       />
     ),
