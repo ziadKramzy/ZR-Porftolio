@@ -18,6 +18,7 @@ function App() {
   useEffect(() => {
     // Preload key images used in the landing page for smoother first paint
     const urls: string[] = [
+
       'https://i.postimg.cc/W3YTCBg9/logo.png',
       'https://i.postimg.cc/Kc757m7R/Screenshot-from-2025-10-06-01-41-02.png',
       'https://i.postimg.cc/m2Bc5bZB/Crowdfunding-Concept-Icon.png',
@@ -97,6 +98,15 @@ function App() {
               viewport={{ once: false, amount: 0.1 }}
               className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-8 xl:gap-12 2xl:gap-16 max-w-6xl 2xl:max-w-7xl mx-auto"
             >
+    <ThreeDCardDemo 
+                title="CRAI Platform for Content Creators " 
+                description="CRAI is VIP Saudi platform for content creators, offering personalized content hubs with subscription access, secure auth and sign‑up, integrated payments, and a responsive dashboard to manage their audience and premium content in one place." 
+                floatImgSrc="https://i.postimg.cc/Dy0mQyfT/Logo.png" 
+                mainImgSrc="https://i.postimg.cc/wM342sb0/Screenshot-from-2025-11-22-03-41-22.png" 
+                linkHref="https://crai-ksa.netlify.app/en" 
+                linkText="LIVE DEMO →" 
+                gitHubLink='https://github.com/AGZ-Team/Courses-Frontend'
+              />
 
         <ThreeDCardDemo 
                 title="Education PLatform For PSU" 

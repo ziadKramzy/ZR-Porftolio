@@ -6,27 +6,27 @@ const Footer: React.FC = () => {
   const logos: SlidingLogoMarqueeItem[] = [
     {
       id: "linkedin",
-      content: <FaLinkedin className="text-white" />,
+      content: <FaLinkedin className="text-white text-3xl sm:text-4xl" />,
       href: "https://www.linkedin.com/in/ziad-khaled-ramzy/",
     },
     {
       id: "github",
-      content: <FaGithub className="text-white" />,
+      content: <FaGithub className="text-white text-3xl sm:text-4xl" />,
       href: "https://github.com/ziadKramzy",
     },
     {
       id: "facebook",
-      content: <FaFacebook className="text-white" />,
+      content: <FaFacebook className="text-white text-3xl sm:text-4xl" />,
       href: "https://www.facebook.com/ziyad.khaled.9/",
     },
     {
       id: "instagram",
-      content: <FaInstagram className="text-white" />,
+      content: <FaInstagram className="text-white text-3xl sm:text-4xl" />,
       href: "https://www.instagram.com/ziad.k_ramzy?igsh=MW1hbzkweWJ1cGR2dA%3D%3D&utm_source=qr",
     },
     {
       id:"Figma",
-      content:<FaFigma className="text-white" />,
+      content:<FaFigma className="text-white text-3xl sm:text-4xl" />,
       href:"https://www.figma.com/@ziadramzy",
     },
   
