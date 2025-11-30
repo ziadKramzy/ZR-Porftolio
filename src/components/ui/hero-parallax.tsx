@@ -198,7 +198,7 @@ const ProductCardComponent = ({
         />
       </a>
       <div className="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-80 bg-black pointer-events-none"></div>
-      <div className="absolute bottom-4 left-4 opacity-0 group-hover/product:opacity-100 flex items-center space-x-2 text-white">
+      <div className="absolute bottom-4 left-4 flex items-center space-x-2 text-white bg-black/70 rounded-lg px-3 py-2">
         <span className="text-3xl font-bold">{product.title}</span>
         {product.svg && (
           <span className="w-8 h-8 flex items-center">{product.svg}</span>
