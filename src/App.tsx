@@ -98,6 +98,16 @@ function App() {
               viewport={{ once: false, amount: 0.1 }}
               className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-8 xl:gap-12 2xl:gap-16 max-w-6xl 2xl:max-w-7xl mx-auto"
             >
+
+
+              <ThreeDCardDemo 
+                title="AirSpeak - Master Aviation Radio with AI " 
+                description="AirSpeak helps pilots train aviation communication using AI-generated ATC and cockpit audio, structured phrase sets, and customizable scenarios, making it easier to master standard phraseology and real-world radio workflow" 
+                floatImgSrc="https://i.postimg.cc/4djFPCP6/Logo-OG.png" 
+                mainImgSrc="https://i.postimg.cc/cCjkFpcj/Screenshot-from-2025-11-30-21-51-57.png" 
+                linkHref="https://airspeak.netlify.app/home" 
+                linkText="LIVE DEMO →" 
+              />
     <ThreeDCardDemo 
                 title="CRAI Platform for Content Creators " 
                 description="CRAI is VIP Saudi platform for content creators, offering personalized content hubs with subscription access, secure auth and sign‑up, integrated payments, and a responsive dashboard to manage their audience and premium content in one place." 
